@@ -22,6 +22,10 @@ public class gitTest1 {
 		
 		
 		System.out.println("printMe2");
+		System.out.println("printM3");
+		System.out.println("print4");
+		
+		
 	}
 
 }
