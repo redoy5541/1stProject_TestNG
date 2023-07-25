@@ -122,28 +122,17 @@ public class LoginTest {
 
 		loginTest();
 		
-//		WebElement element = driver.findElement(By.xpath("customerMenuField"));
-//		element.click();
 		
 		
+		System.out.println();
 		
-		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		WebElement element = driver.findElement(By.xpath("customerMenuField"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
-		element.click();
-		
-//		WebElement element2 = driver.findElement(By.xpath("addCustomerMenuField"));
-//		element2.click();
-		
-		// driver.findElement(customerMenuField).click();
-		// driver.findElement(addCustomerMenuField).click();
+		 driver.findElement(customerMenuField).click();
+		 driver.findElement(addCustomerMenuField).click();
 
 
 		Thread.sleep(3000);// explecit wait
 		Assert.assertEquals(driver.findElement(addCustomerHeaderField).getText(), "Add Contact", "Page not found!!!");
 		
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(customerMenuField));
 		driver.findElement(fullNameField).sendKeys("selenium" + generateRandomNum(999));
 		
 		selectFromDropdown(driver.findElement(companyDropdownField), "Techfios");
